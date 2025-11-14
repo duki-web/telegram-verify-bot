@@ -136,74 +136,87 @@ https://xxx.workers.dev/registerWebhook
 
 ```javascript
 const enable_notification = true;
-
+```
 启用后，每次用户发送消息超过 1 天后会触发一次通知。
-🔍 反欺诈数据库
 
-数据源：
+## 🔍 反欺诈数据库
 
-    文件路径： fraud.db
-    格式： 每行一个 UID
-    更新方式： 通过 PR 或 Issue 补充
+**数据源：**
 
-工作原理：
+- 文件路径：`fraud.db`
+- 格式：每行一个 UID
+- 更新方式：通过 PR 或 Issue 补充
 
-    当已验证用户在欺诈数据库中时，消息不会被转发
-    管理员会收到警告消息：⚠️ 检测到诈骗人员 UID: xxxxx
-    有助于防止骗子使用机器人
+**工作原理：**
 
-🛠️ 常见问题
+- 当已验证用户在欺诈数据库中时，消息不会被转发
+- 管理员会收到警告消息：⚠️ 检测到诈骗人员 UID: xxxxx
+- 有助于防止骗子使用机器人
 
-Q: 验证码过期了怎么办？
+---
+
+## 🛠️ 常见问题
+
+**Q: 验证码过期了怎么办？**
 
 A: 需要重新回答新的验证题。每个新验证码有效期为 24 小时。
 
-Q: 屏蔽用户后他能做什么？
+**Q: 屏蔽用户后他能做什么？**
 
 A: 被屏蔽用户给机器人发消息时会收到 You are blocked 提示，无法继续使用。
 
-Q: 消息转发支持哪些类型？
+**Q: 消息转发支持哪些类型？**
 
 A: 支持文本、图片、视频、文件等 Telegram 支持的所有媒体类型。
 
-Q: 如何自定义欢迎消息？
+**Q: 如何自定义欢迎消息？**
 
 A: 修改 onMessage 函数中 /start 命令的 text 字段即可。
 
-Q: KV 数据库有存储限制吗？
+**Q: KV 数据库有存储限制吗？**
 
 A: Cloudflare 免费账户支持 100GB 存储，足够大多数场景使用。
 
-Q: 如何修改验证有效期？
+**Q: 如何修改验证有效期？**
 
 A: 在 handleGuestMessage 函数中修改 expirationTtl 参数：
 
+```javascript
 // 改为 7 天有效期
 await nfd.put('verified-' + chatId, true, { expirationTtl: 604800 });
+```
 
-📝 项目结构
+## 📝 项目结构
 
 telegram-verify-bot/
-├── README.md              # 项目说明文档
-├── worker.js              # Worker 主代码
-└── fraud.db               # 欺诈数据库（行分隔的 UID 列表）
+├── README.md # 项目说明文档
+├── worker.js # Worker 主代码
+└── fraud.db # 欺诈数据库（行分隔的 UID 列表）
 
-🤝 贡献
+---
+
+## 🤝 贡献
 
 欢迎通过以下方式贡献：
 
-    补充欺诈数据： 提交 PR 更新 fraud.db
-    功能改进： 提交 Issue 讨论功能建议
-    Bug 反馈： 报告发现的问题
+- **补充欺诈数据：** 提交 PR 更新 fraud.db
+- **功能改进：** 提交 Issue 讨论功能建议
+- **Bug 反馈：** 报告发现的问题
 
 提交欺诈信息时请提供可靠的消息出处
-📜 许可证
 
-本项目参考 NFD，致谢原项目作者。
-🔗 相关资源
+---
 
-    Cloudflare Workers 文档
-    Telegram Bot API
-    NFD 原项目
+## 📜 许可证
 
-有问题？ 欢迎提交 Issue 或讨论！ 💬
+本项目参考 [NFD](https://github.com/LloydAsp/nfd)，致谢原项目作者。
+
+---
+
+## 🔗 相关资源
+
+- [Cloudflare Workers 文档](https://developers.cloudflare.com/workers/)
+- [Telegram Bot API](https://core.telegram.org/bots/api)
+- [NFD 原项目](https://github.com/LloydAsp/nfd)
+
+有问题？欢迎提交 Issue 或讨论！💬

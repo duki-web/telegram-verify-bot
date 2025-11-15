@@ -33,7 +33,7 @@
 
 #### 2️⃣ 生成 Webhook 密钥
 
-- 访问 [UUID 生成器](https://www.uuidgenerator.net/) 生成一个随机 UUID 作为 `SECRET`
+- 访问 [UUID 生成器](https://www.uuidgenerator.net) 生成一个随机 UUID 作为 `SECRET`
 
 #### 3️⃣ 在 Cloudflare 创建 Worker
 
@@ -61,7 +61,7 @@
 #### 6️⃣ 部署代码
 
 1. 进入 **Worker Edit code**
-2. 复制本项目 [worker.js](https://github.com/Squarelan/telegram-verify-bot/blob/main/worker.js)代码到编辑器
+2. 复制本项目 [worker.js](./worker.js)代码到编辑器
 3. 点击 **Deploy**
 
 #### 7️⃣ 注册 Webhook
@@ -215,7 +215,7 @@ telegram-verify-bot/
 
 ## 🔗 相关资源
 
-- [Cloudflare Workers 文档](https://developers.cloudflare.com/workers/)
+- [Cloudflare Workers 文档](https://developers.cloudflare.com/workers)
 - [Telegram Bot API](https://core.telegram.org/bots/api)
 - [NFD 原项目](https://github.com/LloydAsp/nfd)
 

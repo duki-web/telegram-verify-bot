@@ -63,7 +63,7 @@
 
 本项目提供两个版本，请根据需要选择：
 
-##### 📦 方案 A：KV 版本（worker-kv.js）
+##### 📦 方案 A：KV 版本（worker-KV.js）
 
 **适合：** 小型应用，数据量不大（<10MB）
 
@@ -74,7 +74,7 @@
 3. 在 Worker 设置中，进入 Settings → Bindings → Add binding
    - Variable name： `lan`
    - KV namespace： 选择刚创建的 `lan`
-4. 部署 ./worker-KV.js 代码
+4. 部署 [worker-KV.js](./worker-KV.js) 代码
 
 **KV 绑定配置：**
 
@@ -108,7 +108,7 @@ let lan = env.lan;
 3. 在 Worker 设置中，进入 Settings → Bindings → Add binding
    - Variable name： `lan`
    - D1 database： 选择刚创建的 `lan`
-4. 部署 ./worker-D1.js 代码
+4. 部署 [worker-D1.js](./worker-D1.js) 代码
 5. 初始化数据库表：
 
 https://你的worker.workers.dev/initDatabase
@@ -158,8 +158,8 @@ CREATE TABLE message_rates (user_id TEXT PRIMARY KEY,last_message_time INTEGER);
 
 1. 进入 Worker Edit code
 2. 选择对应版本的代码：
-   - KV 版本： 复制 ./worker-KV.js
-   - D1 版本： 复制 ./worker-D1.js
+   - KV 版本： 复制 [worker-KV.js](./worker-KV.js)
+   - D1 版本： 复制 [worker-D1.js](./worker-D1.js)
 3. 点击 Deploy
 
 #### 7️⃣ 注册 Webhook
@@ -410,14 +410,14 @@ A:
 ---
 
 ## 📝 项目结构
-
+```
 telegram-verify-bot/
 ├── README.md # 项目说明文档
 ├── worker-KV.js # KV 版本（使用 Cloudflare KV）
 ├── worker-D1.js # D1 版本（使用 Cloudflare D1 数据库）
 ├── wrangler.toml # Wrangler 配置文件
 └── fraud.db # 欺诈数据库（行分隔的 UID 列表）
-
+```
 
 ### 版本对比
 

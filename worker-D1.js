@@ -43,7 +43,7 @@ let TOKEN, WEBHOOK, SECRET, ADMIN_UID, db;
 
 const NOTIFY_INTERVAL = 24 * 3600 * 1000;
 const fraudDb = 'https://raw.githubusercontent.com/Squarelan/telegram-verify-bot/main/data/fraud.db';
-const notificationUrl = 'https://raw.githubusercontent.com/Squarelan/telegram-verify-bot/main/data/notification.txt';
+const notificationUrl = 'https://raw.githubusercontent.com/duki-web/telegram-verify-bot/main/data/notification.txt';
 const enable_notification = false;
 const MAX_VERIFY_ATTEMPTS = 10;
 

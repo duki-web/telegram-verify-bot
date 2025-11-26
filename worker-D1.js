@@ -314,7 +314,15 @@ async function onMessage(message) {
   if (message.text === '/start') {
     return sendMessage({
       chat_id: message.chat.id,
-      text: '你好，这是我的聊天机器人，请通过验证后和我聊天，聊天消息会转发给我。\n\nBot Created Via @Squarelan'
+      text: `你好，这是我的聊天机器人，请通过验证后和我聊天，聊天消息会转发给我。
+
+使用方法：
+
+-【有事直接说，看到了会回复】
+
+当【你】给bot发消息，会被转发到【消息接收者】
+
+\n\nBot Created Via @Vinatin`
     });
   }
 

@@ -507,7 +507,7 @@ async function onCallbackQuery(callbackQuery) {
       await requestTelegram('editMessageText', makeReqBody({
         chat_id: userId,
         message_id: messageId,
-        text: '✅ 验证成功，你现在可以使用机器人了！',
+        text: '✅ 验证成功，你现在可以给我发消息了！\n\n请重新发送消息。',
         reply_markup: undefined
       }));
     } else {
